@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<debate-format schema-version="2.2">
+  <name xml:lang="en">HPC presentation session</name>
+  <version>1</version>
+  <languages>
+    <language>en</language>
+  </languages>
+  <info xml:lang="en">
+    <region>World</region>
+    <level>University</level>
+    <used-at>RWTH Aachen</used-at>
+    <description>25 minutes presentation + 5 min Q+A</description>
+  </info>
+  <speech-types>
+    <speech-type ref="presentation" length="27:00" first-period="normal">
+      <name xml:lang="en">all</name>
+      <bell time="15:00" number="1" next-period="pois-allowed"/>
+      <bell time="22:00" number="2" next-period="warning"/>
+      <bell time="24:00" number="2" next-period="warning"/>
+      <bell time="finish" number="3" next-period="overtime"/>
+    </speech-type>
+    <speech-type ref="question" length="5:00" first-period="normal">
+      <name xml:lang="en">all</name>
+      <bell time="4:00" number="1" next-period="warning"/>
+      <bell time="finish" number="2" next-period="overtime"/>
+    </speech-type>
+  </speech-types>
+  <speeches>
+    <speech type="presentation">
+      <name xml:lang="en">Presentation</name>
+    </speech>
+    <speech type="question">
+      <name xml:lang="en">Q+A</name>
+    </speech>
+  </speeches>
+</debate-format>
