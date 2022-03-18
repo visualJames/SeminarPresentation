@@ -12,17 +12,27 @@
     <description>25 minutes presentation + 5 min Q+A</description>
   </info>
   <period-types>
+      <period-type ref="last-10-minutes" pois-allowed="false">
+          <name xml:lang="en">10 minutes</name>
+          <display>show 10 fingers for 10 minutes left! </display>
+          <default-bgcolor>#25541C</default-bgcolor>
+      </period-type>
+      <period-type ref="last-3-minutes" pois-allowed="false">
+          <name xml:lang="en">3 minutes</name>
+          <display>show 3 fingers for 3 minutes left! </display>
+          <default-bgcolor>#ffe033</default-bgcolor>
+      </period-type>
       <period-type ref="last-minute" pois-allowed="false">
           <name xml:lang="en">last-minute</name>
           <display>last-minute:stand up! </display>
-          <default-bgcolor>#FFF633</default-bgcolor>
+          <default-bgcolor>#A14E21</default-bgcolor>
       </period-type>
   </period-types>
   <speech-types>
     <speech-type ref="presentation" length="26:30" first-period="normal">
       <name xml:lang="en">all</name>
-      <bell time="15:00" number="0" next-period="pois-allowed"/>
-      <bell time="22:00" number="1" next-period="warning"/>
+      <bell time="15:00" number="0" next-period="last-10-minutes"/>
+      <bell time="22:00" number="1" next-period="last-3-minutes"/>
       <bell time="24:00" number="2" next-period="last-minute"/>
       <bell time="finish" number="3" next-period="overtime"/>
     </speech-type>
