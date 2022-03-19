@@ -27,9 +27,19 @@
           <display>last-minute:stand up! </display>
           <default-bgcolor>#A14E21</default-bgcolor>
       </period-type>
+      <period-type ref="ask_question" pois-allowed="true">
+          <name xml:lang="en">ask_question</name>
+          <display>ask a question:break the ice in the discussion part as the session chair!</display>
+          <default-bgcolor>#A14E21</default-bgcolor>
+      </period-type>
+      <period-type ref="still_time_then_ask" pois-allowed="true">
+          <name xml:lang="en">still_time_then_ask</name>
+          <display>If still time, then ask another 2 or 3 questions: questions about the abstract, paper or presentation slides</display>
+          <default-bgcolor>#A14E21</default-bgcolor>
+      </period-type>
   </period-types>
   <speech-types>
-    <speech-type ref="presentation" length="26:30" first-period="normal">
+    <speech-type ref="presentation" length="27:00" first-period="normal">
       <name xml:lang="en">all</name>
       <bell time="15:00" number="0" next-period="last-10-minutes"/>
       <bell time="22:00" number="1" next-period="last-3-minutes"/>
@@ -38,13 +48,17 @@
     </speech-type>
     <speech-type ref="question" length="5:00" first-period="normal">
       <name xml:lang="en">all</name>
-      <bell time="4:00" number="1" next-period="warning"/>
-      <bell time="finish" number="2" next-period="overtime"/>
+      <bell time="0:00" number="0" next-period="ask_question"/>
+      <bell time="4:00" number="0" next-period="still_time_then_ask"/>
+      <bell time="finish" number="0" next-period="overtime"/>
     </speech-type>
   </speech-types>
   <speeches>
     <speech type="presentation">
       <name xml:lang="en">Presentation</name>
+    </speech>
+    <speech type="question">
+      <name xml:lang="en">Question</name>
     </speech>
   </speeches>
 </debate-format>
